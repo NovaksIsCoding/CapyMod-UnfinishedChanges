@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "catetgory": "misc",
+  "ingredients": [
+    {
+    "item": "capymod:lettuce"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "minecraft:carrot"
+    }
+  ],
+  "result":
+  {
+    "item": "capymod:salad",
+    "count": 3
+  }
+}
