@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:diamond"
+    },
+    "title": {
+      "translate": "advancement.capymod.join_advancement.title"
+    },
+    "description": {
+      "translate": "advancement.capymod.join_advancement.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "joined_game": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

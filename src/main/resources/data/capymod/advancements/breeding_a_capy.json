@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "capymod:lettuce"
+    },
+    "title": {
+      "translate": "advancement.capymod.breeding_a_capy.title"
+    },
+    "description": {
+      "translate": "advancement.capymod.breeding_a_capy.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "breedingcapy": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

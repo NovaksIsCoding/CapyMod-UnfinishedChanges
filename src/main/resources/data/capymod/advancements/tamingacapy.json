@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "capymod:lettuce"
+    },
+    "title": {
+      "translate": "advancement.capymod.tamingacapy.title"
+    },
+    "description": {
+      "translate": "advancement.your_mod_id.tamingacapy.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "tamed_custom_mob": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}
