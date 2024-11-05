@@ -3,10 +3,13 @@ package net.studios.capymod.item;
 import com.google.common.util.concurrent.ClosingFuture;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.studios.capymod.CapyEntities.MainEntities;
+import net.studios.capymod.CapyEntities.custom.CapyEntity;
 import net.studios.capymod.CapyMod;
 import net.studios.capymod.blocks.CapyBlocks;
 
@@ -20,7 +23,7 @@ public class Moditems {
             () -> new Item(new Item.Properties()));
 
     //Curación del capybara
-    public static final RegistryObject<Item> SALAD = ITEMS.register("salad",
+    public static final RegistryObject<Item> SALAD_FOOD = ITEMS.register("salad_food",
             () -> new Item(new Item.Properties().food(ModFoods.SALAD)));
 
     public static final RegistryObject<Item> LETTUCE_SEEDS = ITEMS.register("lettuce_seeds",
@@ -28,6 +31,10 @@ public class Moditems {
 
     public static final RegistryObject<Item> CAPYBARA_MEAT = ITEMS.register("capybara_meat",
             () -> new Item(new Item.Properties().food(ModFoods.CAPYBARA_MEAT)));
+
+    public static final RegistryObject<Item> CAPY_SPAWN_EGG = ITEMS.register("capy_egg",
+            () -> new ForgeSpawnEggItem(MainEntities.CAPY, 0x7e9680, 0xc5d1c5,
+                    new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

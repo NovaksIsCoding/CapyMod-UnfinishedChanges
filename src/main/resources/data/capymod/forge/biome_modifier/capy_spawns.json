@@ -1,0 +1,13 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "minecraft:plains"
+  ],
+  "spawners": {
+    "type": "creature",
+    "entity": "capymod:capy",
+    "weight": 40,
+    "minCount": 3,
+    "maxCount": 5
+  }
+}
