@@ -50,11 +50,6 @@ public class CapyMod {
 
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
-        modEventBus.addListener(this::setupSpawnPlacements);
-    }
-
-    private void setupSpawnPlacements(SpawnPlacementRegisterEvent event) {
-        MainEntities.setupSpawns(event);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -63,9 +58,11 @@ public class CapyMod {
     // Add the example block item to the building blocks tab
     // Tambien aqui se hace el registro dentro del menu de creativo
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+            event.accept(Moditems.LETTUCE_SEEDS);
+        }
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(Moditems.LETTUCE);
-            event.accept(Moditems.LETTUCE_SEEDS);
         }
         if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
             event.accept(Moditems.SALAD_FOOD);

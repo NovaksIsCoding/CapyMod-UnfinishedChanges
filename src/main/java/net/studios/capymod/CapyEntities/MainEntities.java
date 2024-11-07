@@ -26,13 +26,4 @@ public class MainEntities {
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
     }
-
-    public static void setupSpawns(SpawnPlacementRegisterEvent event) {
-        SpawnPlacements.register(
-                CAPY.get(),                                // The custom entity's EntityType
-                SpawnPlacements.Type.ON_GROUND,            // Placement type (on the ground)
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, // Heightmap to use for spawn placement
-                Mob::checkMobSpawnRules                    // Spawn rules checker method
-        );
-    }
 }
