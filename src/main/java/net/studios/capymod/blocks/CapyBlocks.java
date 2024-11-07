@@ -22,7 +22,7 @@ public class CapyBlocks {
 
     //Planta de la lechuga
     public static final RegistryObject<Block> LETTUCE_CROP = BLOCKS.register("lettuce_crop",
-            () -> new LettuceCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
+            () -> new LettuceCropBlock(BlockBehaviour.Properties.copy(Blocks.MELON_STEM).noOcclusion().noCollission()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> r = BLOCKS.register(name, block);

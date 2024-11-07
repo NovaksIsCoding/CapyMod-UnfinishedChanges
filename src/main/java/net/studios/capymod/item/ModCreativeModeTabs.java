@@ -19,9 +19,10 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.capymod_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(Moditems.LETTUCE.get());
-                        pOutput.accept(Moditems.SALAD.get());
+                        pOutput.accept(Moditems.SALAD_FOOD.get());
                         pOutput.accept(Moditems.LETTUCE_SEEDS.get());
                         pOutput.accept(Moditems.CAPYBARA_MEAT.get());
+                        pOutput.accept(Moditems.CAPY_SPAWN_EGG.get());
                     })
                     .build());
     public static void register(IEventBus eventBus) {

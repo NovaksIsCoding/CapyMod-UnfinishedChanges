@@ -11,7 +11,7 @@ import net.studios.capymod.CapyMod;
 
 public class CapyRenderer extends MobRenderer<CapyEntity, CapybaraModel<CapyEntity>> {
     public CapyRenderer(EntityRendererProvider.Context context) {
-        super(context, new CapybaraModel<>(context.bakeLayer(ModModelLayers.CAPY_LAYER)), 1f);
+        super(context, new CapybaraModel<>(context.bakeLayer(ModModelLayers.CAPY_LAYER)), 0.3f);
     }
 
     @Override

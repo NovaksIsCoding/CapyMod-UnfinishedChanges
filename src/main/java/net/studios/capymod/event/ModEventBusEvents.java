@@ -14,6 +14,6 @@ public class ModEventBusEvents {
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
-        event.put(MainEntities.CAPY.get(), CapyEntity.createMobAttributes().build());
+        event.put(MainEntities.CAPY.get(), CapyEntity.createAttributes().build());
     }
 }

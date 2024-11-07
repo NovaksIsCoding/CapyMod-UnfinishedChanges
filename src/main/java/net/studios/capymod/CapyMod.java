@@ -1,20 +1,15 @@
 package net.studios.capymod;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.OptionInstance;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.studios.capymod.CapyEntities.MainEntities;
 import net.studios.capymod.CapyEntities.client.CapyRenderer;
-import net.studios.capymod.CapyEntities.custom.CapyEntity;
-import net.studios.capymod.NewLooting.AddedItemsModifier;
 import net.studios.capymod.NewLooting.ModLootModifier;
 import net.studios.capymod.blocks.CapyBlocks;
 import net.studios.capymod.item.ModCreativeModeTabs;
-import net.studios.capymod.item.ModFoods;
 import net.studios.capymod.item.Moditems;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -25,8 +20,9 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.studios.capymod.item.Moditems;
 import org.slf4j.Logger;
+import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
+
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(CapyMod.MOD_ID)
@@ -41,6 +37,8 @@ public class CapyMod {
 
         //Mobs de capybaras
         MainEntities.register(modEventBus);
+        MinecraftForge.EVENT_BUS.register(this);
+
         //Modificaciones al loot para las semillas
         ModLootModifier.register(modEventBus);
         //Registro del item creado para el tameo del capybara
@@ -55,15 +53,23 @@ public class CapyMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
     }
 
     // Add the example block item to the building blocks tab
     // Tambien aqui se hace el registro dentro del menu de creativo
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+            event.accept(Moditems.LETTUCE_SEEDS);
+        }
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(Moditems.LETTUCE);
-            event.accept(Moditems.SALAD);
+        }
+        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
+            event.accept(Moditems.SALAD_FOOD);
+            event.accept(Moditems.CAPYBARA_MEAT);
+        }
+        if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
+            event.accept(Moditems.CAPY_SPAWN_EGG);
         }
     }
 
